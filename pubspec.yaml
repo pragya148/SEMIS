@@ -1,0 +1,85 @@
+name: office
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.1.4
+  cupertino_icons: ^1.0.2
+  table_calendar: ^3.0.0
+  fl_chart: 0.36.0   
+  carousel_slider: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/Group1.png
+    - assets/Asset1.png
+    - assets/Frame.png
+    - assets/Young.png
+    - assets/logo.png
+    - assets/Group.png
+    - assets/Frame1.png
+    - assets/Frame241.png
+    - assets/Math.png
+    - assets/Science.png
+    - assets/Social.png
+    - assets/Computer.png
+    - assets/scienceChem.png
+    - assets/Eng.png
+    - assets/Account.png
+    - assets/Attendance.png
+    - assets/chat.png
+    - assets/routine.png
+    - assets/dashboard.png
+    - assets/FeeIcon.png
+    - assets/leave.png
+    - assets/library.png
+    - assets/NoticeIcon.png
+    - assets/notification.png
+    - assets/profile.png
+    - assets/subjects.png
+    - assets/chat.png
+    - assets/parents.png
+    - assets/ApplyLeave.png
+    - assets/eLibrary.png
+    - assets/event.png
+    - assets/Teacher.png
+    - assets/result.png
+    - assets/chat1.png
+    - assets/Attendance1.png
+    - assets/Money.png
+    - assets/Abhilish.png
+    - assets/Amila.png
+    - assets/Call.png
+    - assets/Kshinu.png
+    - assets/Sarbin.png
+    - assets/Rhitin.png
+    - assets/gallery_image_2.png
+    - assets/gallery_image_3.png
+    - assets/gallery_image_1.png
+    - assets/gallery_image_0.png
+    - assets/class.png
+    - assets/Calendar.png
+    - assets/BloodGroup.png
+    - assets/Gender.png
+    - assets/relationship.png
+    - assets/address.png
+    - assets/occupation.png
+    - assets/father.png
+    - assets/phone.png
+    - assets/guardian.png
+    - assets/mother.png
