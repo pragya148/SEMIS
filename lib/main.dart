@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:office/Files/HomeWorkList.dart';
 import 'package:office/First.dart';
 import 'package:office/HomeScreen.dart';
 import 'package:office/LoginScreen.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Office',
-      home: First(),
+      home: HomeScreen(),
     );
   }
 }
