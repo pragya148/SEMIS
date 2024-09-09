@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:office/BottomNavigation/Attendance.dart';
 import 'package:office/Files/ApplyLeave.dart';
-import 'package:office/Files/Attendance.dart';
-import 'package:office/Files/ParentProfile.dart';
-import 'package:office/Files/Profile.dart';
-import 'package:office/Files/Subject.dart';
-import 'package:office/Files/Teacher.dart';
-import 'package:office/HeadDrawer.dart';
+import 'package:office/Files/NoticeBoard.dart';
+import 'package:office/HomeScreen/HeadDrawer.dart';
+import 'package:office/Homework/Subject.dart';
+import 'package:office/ParentsProfile/ParentProfile.dart';
+import 'package:office/TeachersProfile/Teacher.dart';
+import 'package:office/TeachersProfile/TeacherProfile.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -215,6 +216,10 @@ Widget MyDrawerList(BuildContext context, Color blueColor) {
           ),
           title: Text('Notice Board', style: TextStyle(color: Colors.black)),
           onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NoticeBoard()),
+            );
             // Perform activity for Subjects List
           },
         ),

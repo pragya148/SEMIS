@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:office/Clip.dart';
-import 'package:office/Files/HomeWorkList.dart';
-import 'package:office/Files/Profile.dart';
-import 'package:office/Home.dart';
-import 'package:office/MenuScreen.dart';
+import 'package:office/BottomNavigation/Chat.dart';
+import 'package:office/Files/Clip.dart';
+import 'package:office/HomeScreen/Home.dart';
+import 'package:office/HomeScreen/MenuScreen.dart';
+import 'package:office/Homework/HomeWorkList.dart';
+import 'package:office/TeachersProfile/TeacherInfo.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -35,11 +36,22 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<Widget> _pages = [
-    const Center(child: Text('Chat Screen')),
+    const ChatPage(),
     const Center(child: Text('Notifications Screen')),
-    Home(),
-    HomeWorkList(),
-    Profile(),
+    const Home(),
+    const HomeWorkList(),
+    const TeacherInfo(
+      name: 'Abhilish Arya',
+      dob: '2056/02/14',
+      gender: 'Male',
+      bloodGroup: 'O +ve',
+      experience: '8 years',
+      expertise: 'Mathematics',
+      phoneNumber: '9866545790',
+      address: 'Dhobighat -04, Jhamisikhel',
+      joinedDate: '8 June 2023',
+      photo: 'assets/Abhilish.png',
+    )
   ];
 
   @override
@@ -50,11 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: _selectedIndex == 2
           ? PreferredSize(
-              preferredSize: Size.fromHeight(80.0),
+              preferredSize: const Size.fromHeight(80.0),
               child: ClipPath(
                 clipper: CustomClipperShape(),
                 child: AppBar(
-                  backgroundColor: Colors.white,
+                  backgroundColor: whiteColor,
                   toolbarHeight: 80.0,
                   leading: const Padding(
                     padding: EdgeInsets.all(8.0),
@@ -99,9 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           : null,
       endDrawer: const MenuScreen(),
-      body: _selectedIndex == 0
-          ? const Center(child: Text('Chat Screen'))
-          : _pages[_selectedIndex],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         indicatorColor: blueColor,
         selectedIndex: _selectedIndex,
@@ -125,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(
             icon: Container(
               child: Image.asset('assets/homework.png'),
-              decoration: BoxDecoration(color: blueColor),
+              decoration: const BoxDecoration(color: blueColor),
             ),
             label: 'Homework',
           ),

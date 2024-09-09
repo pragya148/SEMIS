@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:office/Files/ParentsInfo.dart';
+import 'package:office/ParentsProfile/ParentsInfo.dart';
 
 class ParentProfile extends StatefulWidget {
   @override

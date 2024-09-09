@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:office/BottomNavigation/Attendance.dart';
 import 'package:office/Files/ApplyLeave.dart';
-import 'package:office/Files/Attendance.dart';
 import 'package:office/Files/Fees.dart';
-import 'package:office/Files/Profile.dart';
+import 'package:office/TeachersProfile/TeacherProfile.dart';
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     const Color blueColor = Color(0xFF0B2457);
@@ -71,10 +73,8 @@ class Home extends StatelessWidget {
                     },
                   ),
                   items: imgList.map((item) {
-                    return Container(
-                      child: Center(
-                        child: Image.asset(item, fit: BoxFit.cover),
-                      ),
+                    return Center(
+                      child: Image.asset(item, fit: BoxFit.cover),
                     );
                   }).toList(),
                 ),

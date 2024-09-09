@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:office/LoginScreen2.dart';
+import 'package:office/LoginScreen/LoginScreen2.dart';
 
 void main() {
   runApp(Second());

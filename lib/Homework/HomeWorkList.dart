@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:office/Homework/AddWork.dart';
+import 'package:office/Homework/SocialStudy.dart';
 
 class HomeWorkList extends StatelessWidget {
+  const HomeWorkList({super.key});
+
   @override
   Widget build(BuildContext context) {
     const Color blueColor = Color(0xFF0B2457);
-    const List<String> pages = [
-      'Home',
-      'Profile',
-      'Settings',
-      'Logout',
-    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -32,7 +30,7 @@ class HomeWorkList extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),
@@ -42,7 +40,7 @@ class HomeWorkList extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Homework List',
                     style: TextStyle(
                       fontSize: 20,
@@ -62,24 +60,49 @@ class HomeWorkList extends StatelessWidget {
                   ),
                 ],
               ),
-              //   SizedBox(height: 5.0),
               Expanded(
                 child: ListView(
                   children: [
-                    _buildHomeworkTile('Social Studies', 'Room No: 011155',
-                        'assets/SocialStd.png', 3, context),
-                    _buildHomeworkTile('Mathematics', 'Room No: 011155',
-                        'assets/Mathematics.png', 2, context),
-                    _buildHomeworkTile('Mathematics', 'Room No: 011155',
-                        'assets/Mathematics.png', 2, context),
-                    _buildHomeworkTile('Mathematics', 'Room No: 011155',
-                        'assets/Mathematics.png', 2, context),
-                    _buildHomeworkTile('Computer Science', 'Room No: 011155',
-                        'assets/ComputerSub.png', 4, context),
-                    _buildHomeworkTile('English', 'Room No: 011155',
-                        'assets/English.png', 4, context),
-                    _buildHomeworkTile('Nepali', 'Room No: 011155',
-                        'assets/Nepali.png', 4, context),
+                    _buildHomeworkTile(
+                      'Social Studies',
+                      'Room No: 011155',
+                      'assets/SocialStd.png',
+                      3,
+                      context,
+                      SocialStudy(),
+                    ),
+                    _buildHomeworkTile(
+                      'Mathematics',
+                      'Room No: 011155',
+                      'assets/Mathematics.png',
+                      2,
+                      context,
+                      MathematicsPage(),
+                    ),
+                    _buildHomeworkTile(
+                      'Computer Science',
+                      'Room No: 011155',
+                      'assets/ComputerSub.png',
+                      4,
+                      context,
+                      ComputerSciencePage(),
+                    ),
+                    _buildHomeworkTile(
+                      'English',
+                      'Room No: 011155',
+                      'assets/English.png',
+                      4,
+                      context,
+                      EnglishPage(),
+                    ),
+                    _buildHomeworkTile(
+                      'Nepali',
+                      'Room No: 011155',
+                      'assets/Nepali.png',
+                      4,
+                      context,
+                      NepaliPage(),
+                    ),
                   ],
                 ),
               ),
@@ -91,7 +114,7 @@ class HomeWorkList extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AddHomeWork()),
+            MaterialPageRoute(builder: (context) => const AddWork()),
           );
         },
         backgroundColor: Colors.white,
@@ -102,14 +125,12 @@ class HomeWorkList extends StatelessWidget {
         child: Container(
           width: 56,
           height: 56,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
                 color: Colors.white,
                 spreadRadius: 6,
-                //  blurRadius: 7,
-                // offset: Offset(0, 3),
               ),
             ],
           ),
@@ -125,13 +146,19 @@ class HomeWorkList extends StatelessWidget {
     );
   }
 
-  Widget _buildHomeworkTile(String subject, String dueDate, String imagePath,
-      int homeworkCount, BuildContext context) {
+  Widget _buildHomeworkTile(
+    String subject,
+    String dueDate,
+    String imagePath,
+    int homeworkCount,
+    BuildContext context,
+    Widget targetPage, // Add this parameter
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           backgroundColor: Colors.white,
           shadowColor: Colors.grey.withOpacity(0.5),
           elevation: 5,
@@ -140,10 +167,14 @@ class HomeWorkList extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          // Handle the onTap event if needed
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => targetPage),
+          );
         },
         child: ListTile(
-          contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
           leading: Image.asset(
             imagePath,
             width: 80,
@@ -152,7 +183,7 @@ class HomeWorkList extends StatelessWidget {
           ),
           title: Text(
             subject,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Colors.black,
@@ -160,13 +191,13 @@ class HomeWorkList extends StatelessWidget {
           ),
           subtitle: Text(
             dueDate,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               color: Colors.orange,
             ),
           ),
           trailing: Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey[300],
@@ -186,15 +217,72 @@ class HomeWorkList extends StatelessWidget {
   }
 }
 
-class AddHomeWork extends StatelessWidget {
+// Define separate pages for each subject
+class SocialStudiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Homework'),
+        title: const Text('Social Studies'),
       ),
-      body: Center(
-        child: Text('Add Homework Page'),
+      body: const Center(
+        child: Text('Social Studies Homework Details'),
+      ),
+    );
+  }
+}
+
+class MathematicsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mathematics'),
+      ),
+      body: const Center(
+        child: Text('Mathematics Homework Details'),
+      ),
+    );
+  }
+}
+
+class ComputerSciencePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Computer Science'),
+      ),
+      body: const Center(
+        child: Text('Computer Science Homework Details'),
+      ),
+    );
+  }
+}
+
+class EnglishPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('English'),
+      ),
+      body: const Center(
+        child: Text('English Homework Details'),
+      ),
+    );
+  }
+}
+
+class NepaliPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nepali'),
+      ),
+      body: const Center(
+        child: Text('Nepali Homework Details'),
       ),
     );
   }
