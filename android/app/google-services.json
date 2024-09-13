@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394167308698",
+    "project_id": "semis-477f6",
+    "storage_bucket": "semis-477f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394167308698:android:95ab06c65f57138d2dea23",
+        "android_client_info": {
+          "package_name": "com.example.office"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnpVHj-YpIKkSeEttPjRShPX4hYt0vIUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

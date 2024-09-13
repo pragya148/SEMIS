@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:office/BottomNavigation/Chat.dart';
+import 'package:office/BottomNavigation/notify.dart';
 import 'package:office/Files/Clip.dart';
 import 'package:office/HomeScreen/Home.dart';
 import 'package:office/HomeScreen/MenuScreen.dart';
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     const ChatPage(),
-    const Center(child: Text('Notifications Screen')),
+    Notify(),
     const Home(),
     const HomeWorkList(),
     const TeacherInfo(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:office/Homework/CheckedData.dart';
+import 'package:office/Homework/HomeworkVerify.dart';
 
 class SocialStudy extends StatefulWidget {
   const SocialStudy({super.key});
@@ -21,38 +23,28 @@ class _SocialStudyState extends State<SocialStudy> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            // ListView showing the list tile
-            Expanded(
-              child: ListView(
-                children: [
-                  ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 8.0,
-                      horizontal: 8.0,
-                    ),
-                    leading: Image.asset(
-                      'assets/SocialStd.png', // Replace with your image asset path
-                      width: 80,
-                      height: 80,
-                      fit: BoxFit.contain,
-                    ),
-                    title: const Text(
-                      'Social Studies',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text('Room No: 011155'),
-                    onTap: () {
-                      // Handle tap
-                    },
-                  ),
-                  // Additional list items can go here
-                ],
+            // Social Studies ListTile
+            ListTile(
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+              leading: Image.asset(
+                'assets/SocialStd.png', // Replace with your image asset path
+                width: 80,
+                height: 80,
+                fit: BoxFit.contain,
               ),
+              title: const Text(
+                'Social Studies',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: const Text('Room No: 011155'),
+              onTap: () {
+                // Handle tap if needed
+              },
             ),
 
             // Padding to separate ListView from the expandable sections
-            // const SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
 
             // "Assigned" button with dropdown
             Container(
@@ -64,12 +56,28 @@ class _SocialStudyState extends State<SocialStudy> {
               child: ExpansionTile(
                 title: const Text('Assigned'),
                 trailing: const Icon(Icons.arrow_drop_down),
-                children: const [
+                children: [
                   ListTile(
-                    title: Text('Assignment 1'),
+                    title: const Text('Assignment 1'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeworkVerify(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
-                    title: Text('Assignment 2'),
+                    title: const Text('Assignment 2'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeworkVerify(),
+                        ),
+                      );
+                    },
                   ),
                 ],
                 onExpansionChanged: (bool expanded) {
@@ -91,12 +99,28 @@ class _SocialStudyState extends State<SocialStudy> {
               child: ExpansionTile(
                 title: const Text('Checked'),
                 trailing: const Icon(Icons.arrow_drop_down),
-                children: const [
+                children: [
                   ListTile(
-                    title: Text('Checked Work 1'),
+                    title: const Text('Checked Work 1'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeworkVerify(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
-                    title: Text('Checked Work 2'),
+                    title: const Text('Checked Work 2'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CheckedData(),
+                        ),
+                      );
+                    },
                   ),
                 ],
                 onExpansionChanged: (bool expanded) {

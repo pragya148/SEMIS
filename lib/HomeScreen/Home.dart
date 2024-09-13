@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:office/BottomNavigation/Attendance.dart';
 import 'package:office/Files/ApplyLeave.dart';
 import 'package:office/Files/Fees.dart';
+import 'package:office/Files/NoticeBoard.dart';
+import 'package:office/Homework/Subject.dart';
 import 'package:office/TeachersProfile/TeacherProfile.dart';
 
 class Home extends StatelessWidget {
@@ -122,9 +124,9 @@ class Home extends StatelessWidget {
                           builder: (context) {
                             switch (index) {
                               case 0:
-                              // return SubjectList();
+                                return SubjectList();
                               case 1:
-                              // return NoticeBoardPage();
+                                return NoticeBoard();
                               case 2:
                                 return Fees();
                               case 3:

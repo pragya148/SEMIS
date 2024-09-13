@@ -16,13 +16,20 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     const Color blueColor = Color(0xFF0B2457);
     const Color whiteColor = Colors.white;
-    const Color yellowColor = Colors.yellow;
+    const Color yellowColor = Color.fromARGB(255, 234, 217, 37);
 
     final TextField userNameField = TextField(
       controller: userNameController,
       style: const TextStyle(fontSize: 20.0, color: blueColor),
       decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.person, color: yellowColor),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(
+              8.0), // Add padding to adjust the image inside the field
+          child: Image.asset(
+            'assets/UserName.png',
+            color: yellowColor, // Apply color if needed
+          ),
+        ),
         contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: 'Username/Id no.',
         hintStyle: const TextStyle(color: blueColor),
@@ -150,6 +157,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     'Forgot Password?',
                                     style: TextStyle(
                                       decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 16,
                                       color: yellowColor,
                                       decorationColor: yellowColor,
                                     ),
